@@ -14,7 +14,29 @@
     display: block;
 }
 
+/* =========================
+SHOWCASE IMAGE
+========================= */
 
+.showcase-image{
+    padding:50px 8%;
+}
+
+.showcase-image img{
+    width:100%;
+    max-width:100%;
+    height:auto;
+    display:block;
+
+    border-radius:25px;
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.4s ease;
+}
+
+.showcase-image img:hover{
+    transform:scale(1.01);
+}
     
 /* =========================
 FLOATING LOGO
