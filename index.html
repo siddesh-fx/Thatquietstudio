@@ -6,18 +6,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title> ThatQuietStudios | Unreal Engine ArchViz</title>
+    <title>ThatQuietStudios | Unreal Engine 5 ArchViz &amp; Real-Time 3D Studio</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta name="description" content="ThatQuietStudios builds real-time architectural walkthroughs, digital twins, pixel streaming experiences and game-ready 3D assets in Unreal Engine 5 — for architects, developers and real estate teams.">
+    <meta name="keywords" content="Unreal Engine 5, ArchViz, architectural visualization, real-time walkthrough, digital twin, pixel streaming, 3D modeling, environment art, game ready assets">
+    <meta name="author" content="ThatQuietStudios">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://thatquietstudios.com/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ThatQuietStudios">
+    <meta property="og:title" content="ThatQuietStudios | Unreal Engine 5 ArchViz & Real-Time 3D Studio">
+    <meta property="og:description" content="Real-time architectural walkthroughs, digital twins, pixel streaming and game-ready 3D assets built in Unreal Engine 5.">
+    <meta property="og:image" content="/asset/pro.png">
+    <meta property="og:url" content="https://thatquietstudios.com/">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ThatQuietStudios | Unreal Engine 5 ArchViz & Real-Time 3D Studio">
+    <meta name="twitter:description" content="Real-time architectural walkthroughs, digital twins, pixel streaming and game-ready 3D assets built in Unreal Engine 5.">
+    <meta name="twitter:image" content="/asset/pro.png">
+
+    <meta name="theme-color" content="#0a0c10">
+    <link rel="icon" type="image/png" href="/asset/logo.png">
+    <link rel="apple-touch-icon" href="/asset/logo.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "ThatQuietStudios",
+      "description": "Real-time architectural visualization studio specializing in Unreal Engine 5 walkthroughs, digital twins, pixel streaming and game-ready 3D assets.",
+      "url": "https://thatquietstudios.com/",
+      "sameAs": [
+        "https://www.instagram.com/sid._fx/",
+        "https://www.artstation.com/sidfx",
+        "https://www.linkedin.com/in/sid-fx-89952138b"
+      ],
+      "areaServed": "Worldwide",
+      "serviceType": ["Architectural Visualization", "Unreal Engine Development", "3D Modeling", "Real-Time Walkthroughs"]
+    }
+    </script>
 
 </head>
 
 <body>
-  <div class="site-logo">
 
-    <img src="/asset/logo.png" alt="Logo">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- =========================
+    PRELOADER
+    ========================== -->
+
+    <div class="preloader" id="preloader" role="status" aria-live="polite">
+        <div class="preloader-inner">
+            <span class="preloader-tag">THATQUIETSTUDIOS</span>
+            <div class="preloader-bar">
+                <div class="preloader-fill" id="preloaderFill"></div>
+            </div>
+            <span class="preloader-pct" id="preloaderPct">INITIALIZING RENDER // 0%</span>
+        </div>
+    </div>
+
+    <!-- =========================
+    SCROLL PROGRESS
+    ========================== -->
+
+    <div class="scroll-progress" aria-hidden="true">
+        <div class="scroll-progress-fill" id="scrollProgressFill"></div>
+    </div>
+
+   <div class="site-logo">
+
+    <img src="/asset/logo.png" alt="ThatQuietStudios logo" width="52" height="52" fetchpriority="high">
 
 </div>
 
@@ -25,14 +93,17 @@
     NAVIGATION
     ========================== -->
 
-    <nav class="bottom-nav">
+    <nav class="bottom-nav" role="navigation" aria-label="Primary">
 
         <a href="#home">Home</a>
         <a href="#services">Services</a>
         <a href="#projects">Projects</a>
+        <a href="#process">Process</a>
         <a href="#contact">Contact</a>
 
     </nav>
+
+    <main id="main-content">
 
     <!-- =========================
     HERO
@@ -48,6 +119,19 @@
 
         <div class="hero-overlay"></div>
 
+        <div class="hud-frame">
+            <span class="hud-corner tl"></span>
+            <span class="hud-corner tr"></span>
+            <span class="hud-corner bl"></span>
+            <span class="hud-corner br"></span>
+
+            <span class="hud-tag top-left"><span class="dot"></span>LIVE // UE5.4</span>
+            <span class="hud-tag top-right" id="hud-coords">X 000.0 &nbsp; Y 000.0</span>
+            <span class="hud-tag top-right hud-clock" id="hudClock">LOCAL // --:--:--</span>
+            <span class="hud-tag bottom-left">CAM_01 // REALTIME RENDER</span>
+            <span class="hud-tag bottom-right">3840 × 2160</span>
+        </div>
+
         <div class="hero-content">
 
             <span class="hero-tag">
@@ -55,8 +139,13 @@
             
             </span>
 
+            <span class="availability-badge">
+                <span class="dot"></span>
+                Open for new projects
+            </span>
+
             <h1>
-                Transforming Architecture Into Interactive Experiences
+                Transforming Architecture Into <em>Interactive Experiences</em>
             </h1>
 
             <p>
@@ -77,6 +166,11 @@
 
         </div>
 
+        <a href="#services" class="scroll-cue" aria-label="Scroll to services">
+            <span>SCROLL</span>
+            <span class="scroll-cue-line"></span>
+        </a>
+
     </section>
 
     <!-- =========================
@@ -85,75 +179,250 @@
 
     <section class="reveal">
 
-        <h2>About That Quiet Studio</h2>
+        <span class="eyebrow">About the studio</span>
 
-        <p>
-            The Quiet Studio specializes in creating immersive architectural experiences using Unreal Engine 5.
-            We help architects, developers, real estate companies and interior designers showcase projects
-            through interactive walkthroughs, digital twins and cinematic presentations.
-        </p>
+        <div class="about-wrap">
+
+            <h2>Quiet on set,<br>loud in render.</h2>
+
+            <p>
+                ThatQuietStudios builds real-time architectural experiences in Unreal Engine 5 —
+                the kind clients can walk through, not just look at. We work with architects,
+                developers, real estate teams and interior designers who need a project to feel
+                real before a single brick is laid, through interactive walkthroughs, digital
+                twins, pixel streaming and cinematic presentation.
+            </p>
+
+        </div>
 
     </section>
-    
+
+    <!-- =========================
+    WHO WE BUILD FOR
+    ========================== -->
+
+    <section class="reveal">
+
+        <div class="section-head">
+            <span class="eyebrow">Who this is for</span>
+            <h2>Built For Your Side of the Table</h2>
+        </div>
+
+        <div class="audience-grid">
+
+            <div class="audience-card">
+                <span class="tag">Architects</span>
+                <p>Present a design intent that's still in flux — swap materials, test lighting scenarios, and walk a client through a space before construction drawings are final.</p>
+            </div>
+
+            <div class="audience-card">
+                <span class="tag">Developers</span>
+                <p>Sell units off-plan with a walkthrough buyers can actually explore, instead of a static render gallery they scroll past in ten seconds.</p>
+            </div>
+
+            <div class="audience-card">
+                <span class="tag">Real Estate Teams</span>
+                <p>Share a pixel-streamed link straight from a listing page — no install, no app, just a browser tab that lets a buyer tour the property remotely.</p>
+            </div>
+
+            <div class="audience-card">
+                <span class="tag">Interior Designers</span>
+                <p>Let a client toggle finishes, furniture layouts and lighting moods in real time, so the "what if we tried..." conversation happens before anything is built.</p>
+            </div>
+
+        </div>
+
+    </section>
+
 <!-- =========================
 SHOWCASE IMAGE
 ========================= -->
 
 <section class="showcase-image reveal">
 
-    <img src="/asset/pro.png" alt="">
+    <div class="frame">
+        <img src="/asset/pro.png" alt="Unreal Engine 5 architectural visualization still" loading="lazy" decoding="async">
+        <span class="showcase-tag">RENDER // REAL-TIME</span>
+    </div>
 
 </section>
+
+<!-- =========================
+TOOLS STRIP
+========================= -->
+
+<section class="tools-strip reveal" aria-label="Software and tools used">
+    <div class="tools-track">
+        <span>Unreal Engine 5</span><span class="dot-sep">•</span>
+        <span>Blender</span><span class="dot-sep">•</span>
+        <span>Substance Painter</span><span class="dot-sep">•</span>
+        <span>Pixel Streaming</span><span class="dot-sep">•</span>
+        <span>Lumen &amp; Nanite</span><span class="dot-sep">•</span>
+        <span>Blueprint Systems</span><span class="dot-sep">•</span>
+        <span>Quixel Megascans</span><span class="dot-sep">•</span>
+        <span>DaVinci Resolve</span><span class="dot-sep">•</span>
+        <span>Unreal Engine 5</span><span class="dot-sep">•</span>
+        <span>Blender</span><span class="dot-sep">•</span>
+        <span>Substance Painter</span><span class="dot-sep">•</span>
+        <span>Pixel Streaming</span><span class="dot-sep">•</span>
+        <span>Lumen &amp; Nanite</span><span class="dot-sep">•</span>
+        <span>Blueprint Systems</span><span class="dot-sep">•</span>
+        <span>Quixel Megascans</span><span class="dot-sep">•</span>
+        <span>DaVinci Resolve</span><span class="dot-sep">•</span>
+    </div>
+</section>
+
+
     <!-- =========================
     SERVICES
     ========================== -->
 
     <section id="services" class="reveal">
 
-        <h2>Services</h2>
+        <div class="section-head">
+            <span class="eyebrow">What we build</span>
+            <h2>Services</h2>
+            <p>Every service below runs on the same real-time pipeline — nothing pre-baked, nothing you can't walk into.</p>
+        </div>
 
         <div class="services-grid">
 
             <div class="service-card">
+                <span class="tag">SVC_01</span>
                 <h3>Interactive Architectures</h3>
                 <p>Real-time architectural walkthroughs and virtual experiences.</p>
             </div>
 
             <div class="service-card">
+                <span class="tag">SVC_02</span>
                 <h3>3D Modeling</h3>
                 <p>Hard surface modeling, product modeling, architectural assets, optimization.</p>
             </div>
 
             <div class="service-card">
+                <span class="tag">SVC_03</span>
                 <h3>Product Animation</h3>
                 <p>High-quality 3D product visualization, realistic lighting, camera animation, rendering, post-processing.</p>
             </div>
 
             <div class="service-card">
+                <span class="tag">SVC_04</span>
                 <h3>Prop Design</h3>
                 <p>Custom game-ready props, texturing, and optimization.</p>
             </div>
 
             <div class="service-card">
+                <span class="tag">SVC_05</span>
                 <h3>Unreal Engine Development</h3>
-                <p>Blueprint systems, UI, gameplay features, and optimization</p>
+                <p>Blueprint systems, UI, gameplay features, and optimization.</p>
             </div>
 
             <div class="service-card">
+                <span class="tag">SVC_06</span>
                 <h3>Game Environment Design</h3>
-                <p>Creating and  Realistic and immersive environments for games and visualization.</p>
+                <p>Realistic, immersive environments for games and visualization.</p>
             </div>
             
             <div class="service-card">
-                <h3>Story telling</h3>
-                <p>Creating and strory telling using environment and visuals.</p>
+                <span class="tag">SVC_07</span>
+                <h3>Storytelling</h3>
+                <p>Directing narrative through environment, lighting and camera.</p>
             </div>
 
             <div class="service-card">
-                <h3>Video Editing </h3>
-                <p>from basic to advance type of Editing and visuals.</p>
+                <span class="tag">SVC_08</span>
+                <h3>Video Editing</h3>
+                <p>From basic cuts to advanced grading and visual finishing.</p>
             </div>
    
+        </div>
+
+    </section>
+
+    <!-- =========================
+    PROCESS
+    ========================== -->
+
+    <section id="process" class="reveal">
+
+        <div class="section-head">
+            <span class="eyebrow">How it works</span>
+            <h2>From Brief to Build</h2>
+            <p>A straight pipeline from first call to a walkthrough your client can actually step into.</p>
+        </div>
+
+        <div class="process-grid">
+
+            <div class="process-step">
+                <span class="process-num">PROC_01</span>
+                <h3>Brief &amp; Scope</h3>
+                <p>We go through drawings, references and the outcome you need — then lock scope, deliverables and timeline before any modeling starts.</p>
+            </div>
+
+            <div class="process-step">
+                <span class="process-num">PROC_02</span>
+                <h3>Blockout &amp; Assets</h3>
+                <p>Massing, layout and camera paths get blocked out in-engine early, alongside asset modeling, so you're approving the real space, not a mood board.</p>
+            </div>
+
+            <div class="process-step">
+                <span class="process-num">PROC_03</span>
+                <h3>Lighting &amp; Materials</h3>
+                <p>Lumen lighting passes, material customization, and day/night cycles get layered in, with review builds shared at each milestone.</p>
+            </div>
+
+            <div class="process-step">
+                <span class="process-num">PROC_04</span>
+                <h3>Optimize &amp; Deliver</h3>
+                <p>Final optimization pass for target hardware, then packaged as a walkthrough build, pixel-streamed link, or rendered cinematic — your call.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+    TIMELINE ESTIMATOR
+    ========================== -->
+
+    <section class="reveal">
+
+        <div class="estimator" id="estimator">
+
+            <div class="estimator-head">
+                <span class="eyebrow">Quick check</span>
+                <h2>Ballpark Your Timeline</h2>
+                <p>Pick what you need and roughly how complex it is — get a realistic timeline range before your first call.</p>
+            </div>
+
+            <div class="estimator-body">
+
+                <div class="estimator-group">
+                    <span class="estimator-label">What do you need?</span>
+                    <div class="estimator-options" data-group="type">
+                        <button type="button" class="estimator-btn active" data-value="walkthrough">Interactive Walkthrough</button>
+                        <button type="button" class="estimator-btn" data-value="environment">Environment / Scene</button>
+                        <button type="button" class="estimator-btn" data-value="modeling">3D Model / Asset</button>
+                    </div>
+                </div>
+
+                <div class="estimator-group">
+                    <span class="estimator-label">How complex is it?</span>
+                    <div class="estimator-options" data-group="complexity">
+                        <button type="button" class="estimator-btn active" data-value="simple">Simple</button>
+                        <button type="button" class="estimator-btn" data-value="standard">Standard</button>
+                        <button type="button" class="estimator-btn" data-value="complex">Complex</button>
+                    </div>
+                </div>
+
+                <div class="estimator-result" id="estimatorResult" role="status" aria-live="polite">
+                    <span class="estimator-result-label">Estimated timeline</span>
+                    <span class="estimator-result-value" id="estimatorValue">2–3 weeks</span>
+                    <span class="estimator-result-note">Ballpark only — confirmed once we go through your brief.</span>
+                </div>
+
+            </div>
+
         </div>
 
     </section>
@@ -164,14 +433,25 @@ SHOWCASE IMAGE
 
     <section id="projects" class="reveal">
 
-        <h2>Featured Projects</h2>
+        <div class="section-head">
+            <span class="eyebrow">Selected work</span>
+            <h2>Featured Projects</h2>
+            <p>Real-time environments, product models and interactive walkthroughs — click any card for the full breakdown.</p>
+        </div>
 
-        <div class="project-grid">
+        <div class="filter-bar" role="tablist" aria-label="Filter projects by category">
+            <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All Work</button>
+            <button class="filter-btn" data-filter="walkthrough" role="tab" aria-selected="false">Walkthroughs</button>
+            <button class="filter-btn" data-filter="environment" role="tab" aria-selected="false">Environments</button>
+            <button class="filter-btn" data-filter="modeling" role="tab" aria-selected="false">3D Modeling</button>
+        </div>
+
+        <div class="project-grid" id="projectGrid">
 
 
    <!-- PROJECT 3 -->
 
-            <div class="project"
+            <div class="project" data-category="environment"
 
                 data-title="krishanavatram"
                 data-desc="Junior Environment Artist for KrishanAvataram.Contributed to environment development, 
@@ -182,11 +462,16 @@ SHOWCASE IMAGE
                 data-features="Environment , Real-Time Rendering,"
                 data-images="/asset/img5/img1.1.jpeg,/asset/img5/img1.2.jpeg,/asset/img5/img1.3.jpeg">
 
-                <img src="/asset/cover.png" alt="Movie">
+                <div class="thumb">
+                    <img src="/asset/cover.png" alt="Movie" loading="lazy" decoding="async">
+                </div>
 
                 <div class="project-content">
 
-                    <span>Environment Design</span>
+                    <div class="row">
+                        <span class="category">Environment Design</span>
+                        <span class="asset-id">SM_Krishanavatram</span>
+                    </div>
 
                     <h3>krishanavatram</h3>
 
@@ -199,8 +484,9 @@ SHOWCASE IMAGE
             </div>
 
 
-<!-- PROJECT 1 -->
-                <div class="project"
+
+            <!-- PROJECT 1 -->
+                <div class="project" data-category="walkthrough"
 
                 data-title="Interactive 3D Property"
                 data-desc="Transform the way you present real estate with a fully interactive 3D property experience. Allow buyers to explore every detail of a property through immersive visualization, making online property viewing more engaging, informative, and memorable.."
@@ -210,11 +496,16 @@ SHOWCASE IMAGE
                 data-features="Interactive Walkthrough, Material Customization, Day Night Cycle, Pixel Streaming"
                 data-images="/asset/img_new.png,/asset/img_new1.png,/asset/img_new3.png">
 
-                <img src="/asset/img_new.png" alt="Interactive 3D Property">
+                <div class="thumb">
+                    <img src="/asset/img_new.png" alt="Interactive 3D Property" loading="lazy" decoding="async">
+                </div>
 
                 <div class="project-content">
 
-                    <span>Residential</span>
+                    <div class="row">
+                        <span class="category">Residential</span>
+                        <span class="asset-id">SM_Interactive3dProperty</span>
+                    </div>
 
                     <h3>Interactive 3D Property</h3>
 
@@ -225,9 +516,9 @@ SHOWCASE IMAGE
                 </div>
 
             </div>
-            <!-- PROJECT 1 -->
 
-            <div class="project"
+            
+            <div class="project" data-category="walkthrough"
 
                 data-title="ArchVizExplorer"
                 data-desc="ArchVizExplorer walkthrough developed in Unreal Engine 5 with cinematic lighting and interactive features."
@@ -237,11 +528,16 @@ SHOWCASE IMAGE
                 data-features="Interactive Walkthrough, Material Customization, Day Night Cycle, Pixel Streaming"
                 data-images="/asset/img/img1.png,/asset/img/img2.png,/asset/img/img3.png,/asset/img/img4.png,/asset/img/img5.png">
 
-                <img src="/asset/img/img1.png" alt="ArchVizExplorer">
+                <div class="thumb">
+                    <img src="/asset/img/img1.png" alt="ArchVizExplorer" loading="lazy" decoding="async">
+                </div>
 
                 <div class="project-content">
 
-                    <span>Residential</span>
+                    <div class="row">
+                        <span class="category">Residential</span>
+                        <span class="asset-id">SM_Archvizexplore</span>
+                    </div>
 
                     <h3>ArchVizExplore</h3>
 
@@ -257,7 +553,7 @@ SHOWCASE IMAGE
              <!-- PROJECT 2 -->
 
 
-           <div class="project"
+           <div class="project" data-category="walkthrough"
 
                 data-title="Archiz"
                 data-desc="Archiz walkthrough developed in Unreal Engine 5 with cinematic lighting and interactive features."
@@ -267,11 +563,16 @@ SHOWCASE IMAGE
                 data-features="Interactive Walkthrough, Material Customization, Day Night Cycle, Pixel Streaming"
                 data-images="/asset/img2/cover(2).png,/asset/img2/P2img1.png,/asset/img2/P2img2.png,/asset/img2/P2img3.png,/asset/img2/P2img4.png,/asset/img2/P2img5.png">
 
-                <img src="/asset/img2/cover(2).png" alt="Luxury Villa">
+                <div class="thumb">
+                    <img src="/asset/img2/cover(2).png" alt="Luxury Villa" loading="lazy" decoding="async">
+                </div>
 
                 <div class="project-content">
 
-                    <span>Residential</span>
+                    <div class="row">
+                        <span class="category">Residential</span>
+                        <span class="asset-id">SM_Archiz</span>
+                    </div>
 
                     <h3>Archiz</h3>
 
@@ -285,7 +586,7 @@ SHOWCASE IMAGE
 
 
 
-             <div class="project"
+             <div class="project" data-category="walkthrough"
 
                 data-title="ArchViz Interior"
                 data-desc="ArchViz Interior walkthrough developed in Unreal Engine 5 with cinematic lighting and interactive features."
@@ -295,11 +596,16 @@ SHOWCASE IMAGE
                 data-features="Interactive Walkthrough, Material Customization, Day Night Cycle, Pixel Streaming"
                 data-images="/asset/img3/pro3img1.png,/asset/img3/pro3img2.png,/asset/img3/pro3img3.png,/asset/img3/pro3img4.png,/asset/img3/pro3img5.png,/asset/img3/pro3img6.png">
 
-                <img src="/asset/img3/cover(3).png" alt="ArchViz Interior">
+                <div class="thumb">
+                    <img src="/asset/img3/cover(3).png" alt="ArchViz Interior" loading="lazy" decoding="async">
+                </div>
 
-                <div class="project-content">   
+                <div class="project-content">
 
-                    <span>Residential</span>
+                    <div class="row">
+                        <span class="category">Residential</span>
+                        <span class="asset-id">SM_ArchvizInterior</span>
+                    </div>
 
                     <h3>ArchViz Interior</h3>
 
@@ -313,7 +619,7 @@ SHOWCASE IMAGE
 
             <!-- PROJECT 3 -->
 
-            <div class="project"
+            <div class="project" data-category="walkthrough"
 
                 data-title="Commercial Tower"
                 data-desc="Commercial tower visualization featuring real-time navigation and presentation tools."
@@ -323,11 +629,16 @@ SHOWCASE IMAGE
                 data-features="Interactive Walkthrough, Real-Time Rendering, Client Presentation"
                 data-images="/asset/img4/img1.png,/asset/img4/img2.png,/asset/img4/img3.png,/asset/img4/img4.png,/asset/img4/cover(4).png">
 
-                <img src="/asset/img4/cover(4).png" alt="Commercial Tower">
+                <div class="thumb">
+                    <img src="/asset/img4/cover(4).png" alt="Commercial Tower" loading="lazy" decoding="async">
+                </div>
 
                 <div class="project-content">
 
-                    <span>Commercial</span>
+                    <div class="row">
+                        <span class="category">Commercial</span>
+                        <span class="asset-id">SM_CommercialTower</span>
+                    </div>
 
                     <h3>Commercial Tower</h3>
 
@@ -341,7 +652,7 @@ SHOWCASE IMAGE
 
                    <!-- PROJECT 3 -->
 
-            <div class="project"
+            <div class="project" data-category="environment"
 
                 data-title="Ancient Japanese Village"
                 data-desc="An ancient Japanese village environment created in Unreal Engine 5, 
@@ -353,11 +664,16 @@ SHOWCASE IMAGE
                 data-features="game Ready , Real-Time Rendering,"
                 data-images="/asset/environment/img1.webp,/asset/environment/img2.webp,/asset/environment/img3.webp,/asset/environment/img4.webp,/asset/environment/img5.webp">
 
-                <img src="/asset/environment/Cover(9).webp" alt="Commercial Tower">
+                <div class="thumb">
+                    <img src="/asset/environment/Cover(9).webp" alt="Commercial Tower" loading="lazy" decoding="async">
+                </div>
 
                 <div class="project-content">
 
-                    <span>Game Environment Design</span>
+                    <div class="row">
+                        <span class="category">Game Environment Design</span>
+                        <span class="asset-id">SM_AncientJapaneseVillage</span>
+                    </div>
 
                     <h3>Ancient Japanese Village</h3>
 
@@ -372,7 +688,7 @@ SHOWCASE IMAGE
 
                 <!-- PROJECT 3 -->
 
-            <div class="project"
+            <div class="project" data-category="environment"
 
                 data-title="Temple Environment"
                 data-desc="This project is a real-time temple environment created in Unreal Engine 5.
@@ -383,13 +699,18 @@ SHOWCASE IMAGE
                 data-features="game Ready , Real-Time Rendering,"
                 data-images="/asset/img5/img1.jpg,/asset/img5/img2.webp,/asset/img5/img3.webp,/asset/img5/img4.jpg,/asset/img5/img6.jpg">
 
-                <img src="/asset/img5/Cover(9).webp" alt="Commercial Tower">
+                <div class="thumb">
+                    <img src="/asset/img5/Cover(9).webp" alt="Commercial Tower" loading="lazy" decoding="async">
+                </div>
 
                 <div class="project-content">
 
-                    <span>Environment Design</span>
+                    <div class="row">
+                        <span class="category">Environment Design</span>
+                        <span class="asset-id">SM_TempleEnvironment</span>
+                    </div>
 
-                    <h3>Temple Environment </h3>
+                    <h3>Temple Environment</h3>
 
                     <p>
                         3D Environment
@@ -403,7 +724,7 @@ SHOWCASE IMAGE
 
               <!-- PROJECT 3 -->
 
-            <div class="project"
+            <div class="project" data-category="modeling"
 
                 data-title="DJI Mini 4 Pro Model"
                 data-desc="DJI Mini 4 Pro | Hyper-Realistic Drone."
@@ -413,11 +734,16 @@ SHOWCASE IMAGE
                 data-features="game Ready asset, Real-Time Rendering, "
                 data-images="/asset/modeling/img1.webp,/asset/modeling/img3.webp,/asset/modeling/img4.webp,/asset/modeling/img5.webp,/asset/modeling/img6.webp,/asset/modeling/img7.webp">
 
-                <img src="/asset/modeling/cover(5).webp" alt="Commercial Tower">
+                <div class="thumb">
+                    <img src="/asset/modeling/cover(5).webp" alt="Commercial Tower" loading="lazy" decoding="async">
+                </div>
 
                 <div class="project-content">
 
-                    <span>3D modeling</span>
+                    <div class="row">
+                        <span class="category">3D modeling</span>
+                        <span class="asset-id">SM_DjiMini4ProModel</span>
+                    </div>
 
                     <h3>DJI Mini 4 Pro Model</h3>
 
@@ -434,7 +760,7 @@ SHOWCASE IMAGE
 
                               <!-- PROJECT 3 -->
 
-            <div class="project"
+            <div class="project" data-category="modeling"
 
                 data-title="Sci-Fi Gun Model"
                 data-desc="Drone model using Blender and Substance Painter."
@@ -444,11 +770,16 @@ SHOWCASE IMAGE
                 data-features="game Ready asset, Real-Time Rendering, "
                 data-images="/asset/modeling2/img1.webp,/asset/modeling2/img2.webp,/asset/modeling2/img3.webp,/asset/modeling2/img4.webp,/asset/modeling2/img6.webp">
 
-                <img src="/asset/modeling2/cover(6).jpg" alt="Commercial Tower">
+                <div class="thumb">
+                    <img src="/asset/modeling2/cover(6).jpg" alt="Commercial Tower" loading="lazy" decoding="async">
+                </div>
 
                 <div class="project-content">
 
-                    <span>3D modeling</span>
+                    <div class="row">
+                        <span class="category">3D modeling</span>
+                        <span class="asset-id">SM_SciFiGunModel</span>
+                    </div>
 
                     <h3>Sci-Fi Gun Model</h3>
 
@@ -462,7 +793,7 @@ SHOWCASE IMAGE
 
                    <!-- PROJECT 3 -->
 
-            <div class="project"
+            <div class="project" data-category="modeling"
 
                 data-title="M-22X7 EMR Launcher"
                 data-desc="M-22X7 EMR Launcher
@@ -474,11 +805,16 @@ SHOWCASE IMAGE
                 data-features="game Ready asset, Real-Time Rendering, "
                 data-images="/asset/modeling3/img1.webp,/asset/modeling3/img2.webp,/asset/modeling3/img3.webp,/asset/modeling3/img4.webp,/asset/modeling3/img5.webp">
 
-                <img src="/asset/modeling3/Cover(7).webp" alt="Commercial Tower">
+                <div class="thumb">
+                    <img src="/asset/modeling3/Cover(7).webp" alt="Commercial Tower" loading="lazy" decoding="async">
+                </div>
 
                 <div class="project-content">
 
-                    <span>3D modeling</span>
+                    <div class="row">
+                        <span class="category">3D modeling</span>
+                        <span class="asset-id">SM_M22x7EmrLauncher</span>
+                    </div>
 
                     <h3>M-22X7 EMR Launcher</h3>
 
@@ -493,7 +829,7 @@ SHOWCASE IMAGE
 
      <!-- PROJECT 3 -->
 
-            <div class="project"
+            <div class="project" data-category="modeling"
 
                 data-title="Sci-fi station,426"
                 data-desc="Station 426
@@ -505,11 +841,16 @@ SHOWCASE IMAGE
                 data-features="game Ready asset, Real-Time Rendering,"
                 data-images="/asset/modeling4/img1.webp,/asset/modeling4/img2.webp,/asset/modeling4/img3.webp,/asset/modeling4/img4.webp,/asset/modeling4/img5.webp">
 
-                <img src="/asset/modeling4/cover(8).webp" alt="Commercial Tower">
+                <div class="thumb">
+                    <img src="/asset/modeling4/cover(8).webp" alt="Commercial Tower" loading="lazy" decoding="async">
+                </div>
 
                 <div class="project-content">
 
-                    <span>3D modeling</span>
+                    <div class="row">
+                        <span class="category">3D modeling</span>
+                        <span class="asset-id">SM_SciFiStation426</span>
+                    </div>
 
                     <h3>Sci-Fi Station 426</h3>
 
@@ -522,6 +863,8 @@ SHOWCASE IMAGE
             </div>
 
         </div>
+
+        <p class="no-results" id="noResults" hidden>No projects in this category yet — check back soon.</p>
 
     </section>
 
@@ -536,7 +879,11 @@ SHOWCASE IMAGE
 
     <section class="reveal">
 
-        <h2>Case Studies</h2>
+        <div class="section-head">
+            <span class="eyebrow">Case studies</span>
+            <h2>System Breakdowns</h2>
+            <p>How the interactive builds actually work under the hood — architecture, streaming and delivery.</p>
+        </div>
 
         <div class="pdf-grid">
 
@@ -576,26 +923,100 @@ SHOWCASE IMAGE
     </section>
 
     <!-- =========================
+    FAQ
+    ========================== -->
+
+    <section id="faq" class="reveal">
+
+        <div class="section-head">
+            <span class="eyebrow">Before you reach out</span>
+            <h2>Frequently Asked</h2>
+            <p>The questions that come up on almost every first call — answered up front.</p>
+        </div>
+
+        <div class="faq-list">
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>How long does a typical walkthrough take to build?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Most single-property interactive walkthroughs run 3–5 weeks from locked scope to final build, depending on scene complexity, asset count and revision rounds. Larger digital twins or multi-building projects are scoped individually.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Do I get an executable, a pixel-streamed link, or both?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Either, or both. A packaged Windows build is standard for local demos and trade shows; pixel streaming is set up when you need clients to explore the space through a browser link with no install.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>What do you need from me to start?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Floor plans or CAD files, reference imagery or material boards, and a short brief on the camera paths or interactions you need. The more concrete the reference, the faster the blockout stage moves.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>How many revisions are included?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Two structured review rounds are included at each major milestone (blockout, lighting, final pass). Additional rounds are billed hourly and always scoped before starting.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Can you work with an existing Unreal Engine project?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes — happy to pick up an in-progress .uproject, audit the scene, and continue development, optimization or Blueprint work rather than starting from zero.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
     STATS
     ========================== -->
 
     <section class="reveal">
 
-        <h2>Studio Highlights</h2>
+        <div class="section-head">
+            <span class="eyebrow">Studio highlights</span>
+            <h2>Numbers, not filler</h2>
+        </div>
 
         <div class="stats">
 
             <div class="stat">
                 <h3 class="counter" data-target="15">0</h3>
-                <p>Projects Delivered</p>
+                <p>Projects delivered</p>
             </div>
 
             <div class="stat">
                 <h3 class="counter" data-target="8">0</h3>
-                <p>Happy Clients</p>
+                <p>Happy clients</p>
             </div>
 
-           
+            <div class="stat">
+                <h3 class="counter" data-target="5">0</h3>
+                <p>Unreal Engine versions shipped on</p>
+            </div>
 
         </div>
 
@@ -613,7 +1034,9 @@ SHOWCASE IMAGE
 
     <section class="cta reveal">
 
-        <h2>Ready To Present Your Next Project?</h2>
+        <span class="eyebrow" style="justify-content:center;">Let's build</span>
+
+        <h2>Ready to present your next project?</h2>
 
         <p>
             Let's create an interactive experience that helps your clients visualize before construction begins.
@@ -631,27 +1054,36 @@ SHOWCASE IMAGE
 
     <section id="contact" class="contact reveal">
 
+        <span class="eyebrow" style="justify-content:center;">Get in touch</span>
+
         <h2>Contact Us</h2>
 
-       <form id="contactForm">
+       <form id="contactForm" novalidate>
 
-    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="text" id="name" name="name" placeholder="Your Name" autocomplete="name" required>
 
-    <input type="email" id="email" placeholder="Email Address" required>
+    <input type="email" id="email" name="email" placeholder="Email Address" autocomplete="email" required>
 
-    <textarea id="project" placeholder="Tell us about your project" required></textarea>
+    <textarea id="project" name="project" placeholder="Tell us about your project" required></textarea>
 
-    <button type="submit">
-        Send Inquiry
+    <!-- Honeypot field — hidden from real visitors, catches basic form bots -->
+    <input type="text" id="company" name="company" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+    <button type="submit" id="submitBtn">
+        <span>Send Inquiry</span>
     </button>
+
+    <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+
      </form>
 
         <div class="contact-links">
 
-            <a href="https://wa.me/917208319965?text=Hi%20SidFX%2C%20I%20want%20to%20discuss%20a%20project">WhatsApp</a>
-            <a href="https://www.instagram.com/sid._fx/">Instagram</a>
-            <a href="https://www.artstation.com/sidfx">ArtStation</a>
-            <a href="https://www.linkedin.com/in/sid-fx-89952138b">LinkedIn</a>
+            <a href="https://wa.me/917208319965?text=Hi%20SidFX%2C%20I%20want%20to%20discuss%20a%20project" target="_blank" rel="noopener">WhatsApp</a>
+            <a href="https://www.instagram.com/sid._fx/" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.artstation.com/sidfx" target="_blank" rel="noopener">ArtStation</a>
+            <a href="https://www.linkedin.com/in/sid-fx-89952138b" target="_blank" rel="noopener">LinkedIn</a>
+            <button type="button" class="link-btn" id="copyEmailBtn" data-email="sid.fx.3d@gmail.com">Copy Email</button>
 
         </div>
 
@@ -663,9 +1095,21 @@ SHOWCASE IMAGE
 
     <footer>
 
-        © 2026 ThatQuietStudios | Unreal Engine Architectural Visualization
+        <span>© 2026 ThatQuietStudios</span>
+        <span>Unreal Engine 5 // Architectural Visualization</span>
+        <button class="back-to-top" id="backToTop" aria-label="Back to top">↑ TOP</button>
 
     </footer>
+
+    </main>
+
+    <div class="reticle" aria-hidden="true"></div>
+
+    <div class="spotlight"></div>
+
+    <div class="grain-overlay" aria-hidden="true"></div>
+
+    <div class="toast-stack" id="toastStack" aria-live="polite"></div>
 
     <!-- =========================
     PROJECT MODAL
@@ -675,7 +1119,7 @@ SHOWCASE IMAGE
 
         <div class="modal-content">
 
-            <span class="close-modal">&times;</span>
+            <span class="close-modal" role="button" tabindex="0" aria-label="Close project details">&times;</span>
 
             <h2 id="modalTitle"></h2>
 
@@ -705,23 +1149,30 @@ SHOWCASE IMAGE
 
             <div class="slider-wrapper">
 
-                <button id="prevBtn">‹</button>
+                <button id="prevBtn" aria-label="Previous image">‹</button>
 
-                <img id="sliderImage">
+                <img id="sliderImage" loading="lazy" alt="Project gallery image">
 
-                <button id="nextBtn">›</button>
+                <button id="nextBtn" aria-label="Next image">›</button>
 
             </div>
 
-            <a id="pdfLink"  class="btn">
-                
-            </a>
+            <div class="modal-actions">
+
+                <a id="pdfLink" class="btn">
+                    
+                </a>
+
+                <button type="button" id="shareProjectBtn" class="btn btn-outline">Copy Project Link</button>
+
+            </div>
 
         </div>
 
     </div>
 
     <script src="script.js"></script>
+
 
 </body>
 </html>
