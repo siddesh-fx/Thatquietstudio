@@ -567,7 +567,7 @@ ${project}`
         );
 
     const gmailUrl =
-        `https://mail.google.com/mail/?view=cm&fs=1&to=sid.fx.3d@gmail.com&su=${subject}&body=${body}`;
+        `https://mail.google.com/mail/?view=cm&fs=1&to=thatquietstudio@gmail.com&su=${subject}&body=${body}`;
 
     if(submitBtn){
         submitBtn.disabled = true;
@@ -983,7 +983,7 @@ if(shareProjectBtn){
 // ====================================
 
 console.log(
-    '%cThatQuietStudios%c // Unreal Engine 5 ArchViz Studio\nBuilt frame by frame. Curious how it works? sid.fx.3d@gmail.com',
+    '%cThatQuietStudios%c // Unreal Engine 5 ArchViz Studio\nBuilt frame by frame. Curious how it works? thatquietstudio@gmail.com',
     'color:#ff6a2c;font-size:16px;font-weight:bold;',
     'color:#8b93a1;font-size:12px;'
 );
