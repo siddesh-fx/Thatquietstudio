@@ -1809,3 +1809,326 @@ footer{
 }
 
 }
+
+
+/* =========================================================
+   DESKTOP / RESPONSIVE STABILITY PATCH
+   Keeps the existing visual design, but prevents desktop
+   overflow, stretched layouts, and breakpoint collisions.
+   ========================================================= */
+
+/* Prevent intrinsic-width children from forcing the page wider */
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+}
+
+body {
+    min-width: 320px;
+}
+
+main,
+section,
+footer,
+header,
+nav,
+.project-grid,
+.services-grid,
+.pdf-grid,
+.stats,
+.process-grid,
+.estimator,
+.about-wrap,
+.section-head,
+.contact form,
+.modal-content {
+    min-width: 0;
+}
+
+/* Use a controlled content width on large desktop screens */
+section {
+    padding-inline: clamp(28px, 6vw, 120px);
+}
+
+section:not(.hero):not(.cta):not(.showcase-image) {
+    width: 100%;
+}
+
+/* Large-screen readability */
+.section-head {
+    width: 100%;
+}
+
+.hero-content {
+    width: min(960px, calc(100vw - 56px));
+    min-width: 0;
+}
+
+.hero h1 {
+    overflow-wrap: break-word;
+    text-wrap: balance;
+}
+
+.hero p {
+    overflow-wrap: break-word;
+}
+
+/* Desktop navigation: never let it become wider than the viewport */
+.bottom-nav {
+    width: max-content;
+    max-width: calc(100vw - 40px);
+}
+
+.bottom-nav a {
+    white-space: nowrap;
+}
+
+/* Grid sizing that behaves predictably at desktop widths */
+.services-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.project-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.pdf-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.audience-grid,
+.process-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* Cards must be allowed to shrink instead of creating overflow */
+.service-card,
+.project,
+.pdf-card,
+.stat,
+.audience-card,
+.process-step {
+    min-width: 0;
+}
+
+.project-content,
+.service-card,
+.pdf-card,
+.process-step {
+    overflow-wrap: anywhere;
+}
+
+.project-content .row {
+    min-width: 0;
+}
+
+.project-content span.category,
+.project-content .asset-id {
+    min-width: 0;
+}
+
+.project-content .asset-id {
+    overflow-wrap: anywhere;
+    text-align: right;
+}
+
+/* Consistent project image area on desktop */
+.project .thumb {
+    aspect-ratio: 16 / 9;
+}
+
+.project .thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Keep showcase from becoming absurdly wide on ultrawide monitors */
+.showcase-image {
+    padding-inline: clamp(28px, 6vw, 120px);
+}
+
+.showcase-image .frame {
+    width: min(1200px, 100%);
+}
+
+/* Modal should fit desktop viewport without horizontal overflow */
+.project-modal {
+    padding: clamp(16px, 2vw, 32px);
+}
+
+.modal-content {
+    width: min(1200px, 100%);
+    max-width: 1200px;
+    max-height: calc(100vh - 40px);
+    padding: clamp(24px, 3vw, 40px);
+}
+
+.modal-content video {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+
+.slider-wrapper {
+    min-width: 0;
+}
+
+#sliderImage {
+    min-width: 0;
+    max-width: min(900px, 100%);
+}
+
+.modal-actions .btn {
+    max-width: 100%;
+}
+
+/* Contact controls should never exceed their parent */
+input,
+textarea,
+button {
+    max-width: 100%;
+}
+
+.contact form input,
+.contact form textarea,
+.contact form button {
+    width: 100%;
+}
+
+/* Restore compact intrinsic width for the footer back-to-top button */
+footer .back-to-top {
+    width: auto;
+}
+
+/* ---------- Desktop breakpoints ---------- */
+
+@media (max-width: 1200px) {
+    section {
+        padding-inline: clamp(28px, 5vw, 72px);
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .audience-grid,
+    .process-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .project-grid,
+    .pdf-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hero-content {
+        max-width: 900px;
+    }
+}
+
+@media (max-width: 900px) {
+    section {
+        padding-inline: 6%;
+    }
+
+    .services-grid,
+    .project-grid,
+    .pdf-grid,
+    .stats,
+    .audience-grid,
+    .process-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project .thumb {
+        aspect-ratio: 16 / 9;
+    }
+}
+
+/* ---------- Tablet ---------- */
+
+@media (max-width: 768px) {
+    .bottom-nav {
+        width: calc(100% - 24px);
+        max-width: none;
+    }
+
+    .bottom-nav a {
+        min-width: 0;
+        white-space: nowrap;
+    }
+
+    .hero-content {
+        width: calc(100vw - 32px);
+        padding: 16px;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.25rem, 9vw, 4rem);
+    }
+}
+
+/* ---------- Small phones ---------- */
+
+@media (max-width: 480px) {
+    section {
+        padding: 72px 5%;
+    }
+
+    .hero h1 {
+        font-size: clamp(2rem, 10vw, 3rem);
+    }
+
+    .hero-buttons {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .bottom-nav a {
+        font-size: 11px;
+        padding-inline: 4px;
+    }
+
+    .project-content .row {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .project-content .asset-id {
+        text-align: left;
+    }
+
+    footer {
+        padding-inline: 5%;
+    }
+}
+
+/* ---------- Very wide desktop ---------- */
+
+@media (min-width: 1600px) {
+    .project-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    section:not(.hero):not(.cta):not(.showcase-image) {
+        max-width: 1800px;
+        margin-inline: auto;
+    }
+}
