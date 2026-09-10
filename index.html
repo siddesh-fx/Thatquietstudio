@@ -125,7 +125,6 @@
             <span class="hud-corner br"></span>
 
             <span class="hud-tag top-left"><span class="dot"></span>LIVE // UE5.4</span>
-            <span class="hud-tag top-right" id="hud-coords">X 000.0 &nbsp; Y 000.0</span>
             <span class="hud-tag top-right hud-clock" id="hudClock">LOCAL // --:--:--</span>
             <span class="hud-tag bottom-left">CAM_01 // REALTIME RENDER</span>
             <span class="hud-tag bottom-right">3840 × 2160</span>
@@ -307,7 +306,7 @@ SHOWCASE IMAGE
     data-title="Yamuna Sky City"
     data-desc="Yamuna Sky City is an immersive architectural visualization showcasing the project's exterior design, high-rise architecture, landscaping, and surrounding environment. Developed in Unreal Engine 5 with realistic lighting and interactive walkthrough features."
 
-    data-video=""
+    data-video="https://youtu.be/Xp_tmPh-zwA"
 
     data-pdf=""
     data-software="Unreal Engine 5, Blender, Substance Painter"
@@ -807,8 +806,6 @@ SHOWCASE IMAGE
 
     </main>
 
-    <div class="reticle" aria-hidden="true"></div>
-
     <div class="spotlight"></div>
 
     <div class="grain-overlay" aria-hidden="true"></div>
@@ -827,7 +824,9 @@ SHOWCASE IMAGE
 
             <h2 id="modalTitle"></h2>
 
-            <video id="modalVideo" controls></video>
+            <div id="modalVideoWrapper" class="video-wrapper">
+                <iframe id="modalVideo" src="" title="Project video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
 
             <p id="modalDesc"></p>
 
