@@ -147,6 +147,27 @@ document.getElementById("modalDesc");
 const modalVideo =
 document.getElementById("modalVideo");
 
+const modalVideoWrapper =
+document.getElementById("modalVideoWrapper");
+
+function getYouTubeEmbedUrl(url){
+
+    let videoId = "";
+
+    const shortMatch = url.match(/youtu\.be\/([a-zA-Z0-9_-]+)/);
+    const longMatch = url.match(/[?&]v=([a-zA-Z0-9_-]+)/);
+    const embedMatch = url.match(/youtube\.com\/embed\/([a-zA-Z0-9_-]+)/);
+
+    if(shortMatch) videoId = shortMatch[1];
+    else if(longMatch) videoId = longMatch[1];
+    else if(embedMatch) videoId = embedMatch[1];
+
+    if(!videoId) return url;
+
+    return "https://www.youtube.com/embed/" + videoId;
+
+}
+
 const modalSoftware =
 document.getElementById("modalSoftware");
 
@@ -206,12 +227,13 @@ function openProjectModal(project){
 
     if(videoSrc && videoSrc.trim() !== "") {
 
-        modalVideo.src = videoSrc;
-        modalVideo.style.display = "block";
+        modalVideo.src = getYouTubeEmbedUrl(videoSrc.trim());
+        modalVideoWrapper.style.display = "block";
 
     } else {
 
-        modalVideo.style.display = "none";
+        modalVideo.src = "";
+        modalVideoWrapper.style.display = "none";
     }
 
     modalSoftware.textContent =
@@ -339,9 +361,7 @@ function closeProjectModal(){
 
 modal.classList.remove("active");
 
-modalVideo.pause();
-
-modalVideo.currentTime = 0;
+modalVideo.src = "";
 
 document.body.style.overflow = "auto";
 
@@ -596,31 +616,6 @@ document.addEventListener('mousemove',(e)=>{
 });
 
 // ====================================
-// HERO HUD COORDINATE READOUT
-// ====================================
-
-const hudCoords = document.getElementById('hud-coords');
-const heroSection = document.querySelector('.hero');
-
-if(hudCoords && heroSection){
-
-    heroSection.addEventListener('mousemove', (e) => {
-
-        const rect = heroSection.getBoundingClientRect();
-        const x = (e.clientX - rect.left).toFixed(1);
-        const y = (e.clientY - rect.top).toFixed(1);
-
-        hudCoords.textContent = `X ${x}   Y ${y}`;
-
-    });
-
-    heroSection.addEventListener('mouseleave', () => {
-        hudCoords.textContent = 'X 000.0   Y 000.0';
-    });
-
-}
-
-// ====================================
 // PRELOADER
 // ====================================
 
@@ -780,40 +775,6 @@ if(backToTop){
     });
 
 }
-
-// ====================================
-// RETICLE CURSOR
-// ====================================
-
-(function(){
-
-    const reticle = document.querySelector('.reticle');
-
-    if(!reticle) return;
-    if(window.matchMedia('(hover: none), (pointer: coarse)').matches) return;
-
-    document.addEventListener('mousemove', (e) => {
-
-        reticle.style.left = e.clientX + 'px';
-        reticle.style.top = e.clientY + 'px';
-        reticle.classList.add('visible');
-
-    });
-
-    document.addEventListener('mouseleave', () => {
-        reticle.classList.remove('visible');
-    });
-
-    const hoverTargets = document.querySelectorAll('a, button, .project, .service-card, .faq-question, .pdf-card');
-
-    hoverTargets.forEach(el => {
-
-        el.addEventListener('mouseenter', () => reticle.classList.add('hover'));
-        el.addEventListener('mouseleave', () => reticle.classList.remove('hover'));
-
-    });
-
-})();
 
 // ====================================
 // TOAST NOTIFICATIONS
